@@ -26,11 +26,11 @@ $ npm install
 
 3. PTX 網站註冊會員取得 ID 及 key
 
-[PTX網站](https://ptx.transportdata.tw/PTX/)
+* [PTX網站](https://ptx.transportdata.tw/PTX/)
 
 4. Line Messaging API 建立新的 Provider
 
-[https://developers.line.biz/zh-hant/services/messaging-api/](https://developers.line.biz/zh-hant/services/messaging-api/)
+* [https://developers.line.biz/zh-hant/services/messaging-api/](https://developers.line.biz/zh-hant/services/messaging-api/)
 
 5. [http://localhost:3000](http://localhost:3000) execution on your browser
 ```
@@ -46,7 +46,7 @@ $ npm run dev
 * 輸入天氣或新竹天氣，會回覆中央氣象局的新竹天氣預報
 * 輸入亞聯或1728，會回覆亞聯客運抵達大坪林站的預估時間
 * 輸入5608，會回覆5608客運尚有幾占抵達關東橋
-* 輸入5608 + 站點(例如 5608 竹中站)，會回覆5608客運尚有幾占抵達該站點
+* 輸入5608 + 站點(例如 5608 竹中站)，會回覆5608客運尚有幾站抵達該站點
 
 ## Authors
 
