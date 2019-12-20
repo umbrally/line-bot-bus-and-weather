@@ -169,12 +169,16 @@ bot.on('message', function (event) {
           replyContent = `Hi ${title}, 647公車-寶興路口的抵達時間: \n${busInfo}`
         }
         else if (busNumber === '1728' || busNumber === '亞聯') {
-          busResult = await rp({
+          busResultDaPinLin = await rp({
             url: `https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/InterCity/1728?$filter=contains(StopName%2FZh_tw%2C'%E5%A4%A7%E5%9D%AA%E6%9E%97')&$top=30&$format=JSON`, headers: getAuthorizationHeader(), json: true
           })
-          console.log('----', busResult)
-          let busInfo = getBusInfo(busResult, '新竹', '台北')
-          replyContent = `Hi ${title}, 亞聯-捷運大坪林站的抵達時間: \n${busInfo}`
+          busResultSciencePark = await rp({
+            url: `https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/InterCity/1728?$filter=contains(StopName%2FZh_tw%2C'${encodeURI('科技生活館')}')&$top=30&$format=JSON`, headers: getAuthorizationHeader(), json: true
+          })
+          console.log('----', busResultDaPinLin)
+          let busInfoDaPinLin = getBusInfo(busResultDaPinLin, '新竹', '台北')
+          let busInfoSciencePark = getBusInfo(busResultSciencePark, '新竹', '台北')
+          replyContent = `Hi ${title}, 亞聯-捷運大坪林站的抵達時間: \n${busInfoDaPinLin}\n科技生活館的抵達時間: \n${busInfoSciencePark}`
         }
         else if (busNumber === '5608') {
           const queryStopName = notDigitNorSpace.exec(msg) ? notDigitNorSpace.exec(msg)[0] : '關東橋'
